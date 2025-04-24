@@ -1,0 +1,5 @@
+{
+  "standard.autoFixOnSave": true,
+  "standard._legacyModuleResolve": true,
+  "standard.enableGlobally": true
+}
