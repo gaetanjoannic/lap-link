@@ -73,7 +73,7 @@ INSERT INTO circuits (name, location, description, length_meters) VALUES
 ('Circuit de Lédenon', 'Lédenon, Gard', 'Circuit technique avec le plus grand dénivelé de France', 3156),
 ('Circuit Carole', 'Tremblay-en-France, Seine-Saint-Denis', 'Circuit principalement moto, plat et rapide', 2055),
 ('Circuit du Val de Vienne', 'Le Vigeant, Vienne', 'Circuit varié avec courbes rapides et chicanes', 3768),
-('Circuit de Charade', 'Saint-Genès-Champanelle, Puy-de-Dôme', 'Circuit historique dans les volcans Auvergnats', 3975),
+('Circuit de Charade', 'Saint-Genès-Champanelle, Puy-de-Dôme', 'Circuit historique dans les volcans Auvergnatsyarn', 3975),
 ('Circuit de Nogaro', 'Nogaro, Gers', 'Circuit Paul Armagnac connu pour ses courses de tourisme', 3636),
 ('Circuit de Pau-Arnos', 'Arnos, Pyrénées-Atlantiques', 'Circuit technique avec dénivelés importants', 3030);
 
