@@ -12,13 +12,13 @@ services:
       - '5432:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./init.sql:/docker-entrypoint-initdb.d/init-db.sql
   api:
       build: ./api
       ports:
         - '3000:3000'
-      environment:
-        - DATABASE_URL=postgresql://reactnativeapp:password@db:5432/reactnativeapp_db
+      env_file:
+      - .env
       depends_on:
         - db
       volumes:
