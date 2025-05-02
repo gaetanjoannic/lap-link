@@ -1,6 +1,7 @@
 import axios from 'axios'
 import Config from 'react-native-config'
 
+console.log('DB URL', Config.API_URL)
 const dbAPI = axios.create({
   baseURL: 'http://192.168.1.21:3000',
   headers: {
@@ -10,7 +11,6 @@ const dbAPI = axios.create({
   timeout: 10000
 })
 
-console.log(Config.API_URL)
 export const getAllCircuits = async () => {
   try {
     return await dbAPI.get('/circuits')
@@ -27,8 +27,4 @@ export const getCircuitById = async (id) => {
     console.error(`Error fetching circuit ${id}:`, error)
     throw error
   }
-}
-export default {
-  getAllCircuits,
-  getCircuitById
 }

@@ -4,9 +4,6 @@ import CircuitsList from '../components/circuits/CircuitsList'
 
 function CircuitsScreen() {
   const { circuits, isLoading } = useCircuits()
-  // if (isLoading) {
-  //   return 'Circuits incomming'
-  // }
   return (
     <View>
       <Text>Circuit Screen</Text>

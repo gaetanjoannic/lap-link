@@ -1,5 +1,5 @@
 import { FlatList } from 'react-native'
-import CircuitsListItem from '../CircuitsListItem'
+import CircuitsListItem from './CircuitsListItem'
 
 function CircuitsList({ circuits }) {
   return (
