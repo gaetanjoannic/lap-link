@@ -1,6 +1,6 @@
 import { Text, TouchableOpacity, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import WeatherIconComponent from '../weather/WeatherIconComponent'
+import WeatherIcon from '../weather/WeatherIcon'
 
 function CircuitsListItem({ circuit }) {
   const navigation = useNavigation()
@@ -14,7 +14,7 @@ function CircuitsListItem({ circuit }) {
     <TouchableOpacity onPress={handlePress}>
       <View>
         <Text>{circuit.name}</Text>
-        <WeatherIconComponent lat={circuit.latitude} lon={circuit.longitude} />
+        <WeatherIcon lat={circuit.latitude} lon={circuit.longitude} />
       </View>
     </TouchableOpacity>
   )

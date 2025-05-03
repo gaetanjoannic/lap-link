@@ -60,37 +60,68 @@ export const getForecast = async (latitude, longitude) => {
           lon: longitude,
           appid: '575d5db056d98746a9da34b3fbce8aa0',
           units: 'metric',
-          lang: 'fr'
+          lang: 'fr',
+          cnt: 40
         }
       }
     )
 
-    const forecastData = {
-      forecast: response.data.list.map(item => ({
-        timestamp: item.dt,
-        date: item.dt_txt,
-        temperature: {
-          current: item.main.temp,
-          feelsLike: item.main.feels_like,
-          min: item.main.temp_min,
-          max: item.main.temp_max
-        },
-        weather: {
-          description: item.weather[0].description,
-          icon: item.weather[0].icon,
-          main: item.weather[0].main
-        },
-        wind: {
-          speed: item.wind.speed,
-          direction: item.wind.deg
-        },
-        humidity: item.main.humidity,
-        pressure: item.main.pressure,
-        cloudiness: item.clouds.all
-      }))
-    }
+    const dailyForecasts = []
+    const forecastsByDay = {}
 
-    return forecastData
+    response.data.list.forEach(item => {
+      const [date, time] = item.dt_txt.split(' ')
+      if (!forecastsByDay[date]) {
+        forecastsByDay[date] = []
+      }
+      forecastsByDay[date].push(item)
+    })
+
+    const currentDate = new Date().toISOString().split('T')[0]
+
+    Object.keys(forecastsByDay).sort().forEach(date => {
+      if (dailyForecasts.length < 5) {
+        const forecasts = forecastsByDay[date]
+        let selectedForecast
+
+        if (date === currentDate) {
+          const now = new Date()
+          selectedForecast = forecasts.reduce((closest, current) => {
+            const forecastTime = new Date(current.dt_txt)
+            const closestTime = new Date(closest.dt_txt)
+
+            return Math.abs(forecastTime - now) < Math.abs(closestTime - now) ? current : closest
+          }, forecasts[0])
+        } else {
+          selectedForecast = forecasts.find(f => f.dt_txt.includes('12:00:00')) || forecasts[0]
+        }
+
+        dailyForecasts.push({
+          timestamp: selectedForecast.dt,
+          date: selectedForecast.dt_txt,
+          temperature: {
+            current: selectedForecast.main.temp,
+            feelsLike: selectedForecast.main.feels_like,
+            min: selectedForecast.main.temp_min,
+            max: selectedForecast.main.temp_max
+          },
+          weather: {
+            description: selectedForecast.weather[0].description,
+            icon: selectedForecast.weather[0].icon,
+            main: selectedForecast.weather[0].main
+          },
+          wind: {
+            speed: selectedForecast.wind.speed,
+            direction: selectedForecast.wind.deg
+          },
+          humidity: selectedForecast.main.humidity,
+          pressure: selectedForecast.main.pressure,
+          cloudiness: selectedForecast.clouds.all
+        })
+      }
+    })
+
+    return { data: dailyForecasts }
   } catch (error) {
     console.error('Erreur lors de la récupération des prévisions météo:', error)
     throw error

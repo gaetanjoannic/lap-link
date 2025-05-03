@@ -2,19 +2,23 @@ import { Image, StyleSheet, View } from 'react-native'
 import useWeather from '../../hooks/useWeather'
 import { useEffect } from 'react'
 
-function WeatherIconComponent({ lat, lon }) {
+function WeatherIcon({ lat, lon, icon }) {
   const { currentWeather, getCurrentWeatherByCircuit } = useWeather()
-  useEffect(() => {
-    if (lat && lon) {
+  if (lat && lon) {
+    useEffect(() => {
       getCurrentWeatherByCircuit(lat, lon)
-    }
-  }, [lat, lon])
-  console.log('WeatherComponent', currentWeather)
-
+    }, [lat, lon])
+  }
+  const iconUrl = icon
+    ? `https://openweathermap.org/img/wn/${icon}@2x.png`
+    : currentWeather?.weather?.icon
+      ? `https://openweathermap.org/img/wn/${currentWeather.weather.icon}@2x.png`
+      : null
+  console.log('WeatherIcon: ', icon, iconUrl)
   return (
     <View>
       <Image
-        source={{ uri: `https://openweathermap.org/img/wn/${currentWeather?.weather?.icon}@2x.png` }}
+        source={{ uri: iconUrl }}
         resizeMode='contain'
         style={styles.weatherIcon}
       />
@@ -29,4 +33,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default WeatherIconComponent
+export default WeatherIcon
