@@ -1,6 +1,3 @@
-.env
-!.env.example
-
 # OSX
 #
 .DS_Store
@@ -76,3 +73,7 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# ENV files
+.env
+!.env.example

@@ -2,7 +2,6 @@ import { FlatList } from 'react-native'
 import CircuitsListItem from './CircuitsListItem'
 
 function CircuitsList({ circuits }) {
-  console.log('CircuitsList', circuits.data)
   return (
     <>
       <FlatList

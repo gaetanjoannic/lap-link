@@ -1,20 +1,23 @@
 import axios from 'axios'
 import Config from 'react-native-config'
 
+const owAPI = axios.create({
+  baseURL: Config.OPENWEATHER_API_URL
+})
+
 export const getCurrentWeather = async (latitude, longitude) => {
   try {
-    console.log('OW API KEY', Config.OPENWEATHER_API_KEY)
-    // if (!Config.OPENWEATHER_API_KEY) {
-    //   throw new Error('Clé API OpenWeather non configurée')
-    // }
+    if (!Config.OPENWEATHER_API_KEY) {
+      throw new Error('Clé API OpenWeather non configurée')
+    }
 
-    const response = await axios.get(
-      'https://api.openweathermap.org/data/2.5/weather',
+    const response = await owAPI.get(
+      '/weather',
       {
         params: {
           lat: latitude,
           lon: longitude,
-          appid: '575d5db056d98746a9da34b3fbce8aa0',
+          appid: Config.OPENWEATHER_API_KEY,
           units: 'metric',
           lang: 'fr'
         }
@@ -52,13 +55,13 @@ export const getCurrentWeather = async (latitude, longitude) => {
 
 export const getForecast = async (latitude, longitude) => {
   try {
-    const response = await axios.get(
-      'https://api.openweathermap.org/data/2.5/forecast',
+    const response = await owAPI.get(
+      '/forecast',
       {
         params: {
           lat: latitude,
           lon: longitude,
-          appid: '575d5db056d98746a9da34b3fbce8aa0',
+          appid: Config.OPENWEATHER_API_KEY,
           units: 'metric',
           lang: 'fr',
           cnt: 40
