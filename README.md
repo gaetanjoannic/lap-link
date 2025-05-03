@@ -90,9 +90,9 @@ yarn android
 ## Captures d'écran ou démonstration
 Si l'installation a bien fonctionné, voici ce que vous devriez voir :
 ### Liste des circuits
-![Liste des circuits](./assets/screenshots/circuit-list.jpeg)
+![Liste des circuits](./assets/screenshots/circuit-list.png)
 *Affichage de la liste des circuits automobiles français avec conditions météo actuelles*
 
 ### Détail d'un circuit
-![Détail d'un circuit](./assets/screenshots/single-circuit.jpeg)
+![Détail d'un circuit](./assets/screenshots/single-circuit.png)
 *Affichage détaillé du Circuit Bugatti avec prévisions météorologiques sur 5 jours*
