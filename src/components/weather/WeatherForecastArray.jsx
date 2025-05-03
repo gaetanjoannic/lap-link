@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   forecastItem: {
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#fff',
     borderRadius: 8,
     padding: 12,
     marginRight: 10,

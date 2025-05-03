@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import WeatherIcon from '../weather/WeatherIcon'
 
@@ -11,13 +11,38 @@ function CircuitsListItem({ circuit }) {
   }
 
   return (
-    <TouchableOpacity onPress={handlePress}>
-      <View>
-        <Text>{circuit.name}</Text>
+    <TouchableOpacity onPress={handlePress} style={styles.container}>
+      <View style={styles.content}>
+        <Text style={styles.name}>{circuit.name}</Text>
         <WeatherIcon lat={circuit.latitude} lon={circuit.longitude} />
       </View>
     </TouchableOpacity>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 15,
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    marginVertical: 5,
+    marginHorizontal: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    elevation: 5
+  },
+  content: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
+  name: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333'
+  },
+})
 
 export default CircuitsListItem
