@@ -5,7 +5,7 @@ LapLink est une application mobile permettant aux pilotes amateurs d'enregistrer
 
 Cette branche a pour objectif de répertorier les circuits automobiles français et d'afficher la météo en temps réel ainsi que les prévisions météorologiques pour chacun de ces circuits.
 
-## Technologies Utilisées
+## Technologies utilisées
 * React Native
 * JavaScript
 * React Navigation
@@ -14,13 +14,13 @@ Cette branche a pour objectif de répertorier les circuits automobiles français
 * PostgreSQL avec extension PostGIS
 * Node.js (pour l'API backend)
 
-## Fonctionnalités Principales
+## Fonctionnalités principales
 * Liste des circuits automobiles français
 * Affichage détaillé de chaque circuit (longueur, localisation, caractéristiques)
 * Météo en temps réel sur le circuit sélectionné
 * Prévisions météorologiques pour les prochains jours
 
-## APIs Utilisées
+## APIs utilisées
 * OpenWeather API
   OpenWeather fournit des données météorologiques précises en temps réel ainsi que des prévisions pour n'importe quelle localisation. Dans notre application, nous utilisons ces données pour afficher les conditions météorologiques actuelles et futures sur les circuits.
 * API LapLink (backend personnalisé)
