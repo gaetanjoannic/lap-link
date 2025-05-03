@@ -39,10 +39,8 @@ function WeatherForecastArray({ lat, lon }) {
               <WeatherIcon icon={item?.weather?.icon} />
               <Text style={styles.dateText}>
                 {new Date(item.date).toLocaleString('fr-FR', {
-                  day: '2-digit',
-                  month: '2-digit',
-                  hour: '2-digit',
-                  minute: '2-digit'
+                  day: 'numeric',
+                  month: 'long'
                 })}
               </Text>
               <Text>{item.weather.description}</Text>
