@@ -11,6 +11,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from './screens/HomeScreen'
 import ProfileScreen from './screens/ProfileScreen'
 import { TouchableOpacity, Text } from 'react-native'
+import SplashScreen from './screens/SplashScreen'
 
 const Stack = createNativeStackNavigator()
 
@@ -41,6 +42,10 @@ function App () {
             headerStyle: { backgroundColor: 'black' },
             headerTintColor: '#fff'
           }}
+        />
+        <Stack.Screen
+          name='Splash'
+          component={SplashScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
