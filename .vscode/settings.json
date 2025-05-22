@@ -1,5 +1,6 @@
 {
   "standard.autoFixOnSave": true,
   "standard._legacyModuleResolve": true,
-  "standard.enableGlobally": true
+  "standard.enableGlobally": true,
+  "workbench.colorCustomizations": {}
 }
