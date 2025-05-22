@@ -14,7 +14,6 @@ function WeatherIcon({ lat, lon, icon }) {
     : currentWeather?.weather?.icon
       ? `https://openweathermap.org/img/wn/${currentWeather.weather.icon}@2x.png`
       : null
-  console.log('WeatherIcon: ', icon, iconUrl)
   return (
     <View>
       <Image

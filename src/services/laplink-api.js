@@ -1,7 +1,6 @@
 import axios from 'axios'
 import Config from 'react-native-config'
 
-console.log('DB URL', Config.API_URL)
 const dbAPI = axios.create({
   baseURL: Config.API_URL,
   headers: {
