@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import useCircuits from '../hooks/useCircuits'
 import CircuitsList from '../components/circuits/CircuitsList'
 
 function CircuitsScreen() {
-  const { circuits, isLoading } = useCircuits()
+  const { circuits } = useCircuits()
   return (
     <View style={styles.container}>
       <CircuitsList

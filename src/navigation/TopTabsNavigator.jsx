@@ -1,17 +1,16 @@
-import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { TouchableOpacity, Text } from 'react-native'
-import BottomTabsNavigator from './BottomTabsNavigator'
 import ProfileScreen from '../screens/ProfileScreen'
+import { TouchableOpacity, Text } from 'react-native'
+import HomeScreen from '../screens/HomeScreen'
 
 const Stack = createNativeStackNavigator()
 
-function MainNavigator() {
+function TopTabsNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name='MainTabs'
-        component={BottomTabsNavigator}
+        name='Home'
+        component={HomeScreen}
         options={({ navigation }) => ({
           title: 'LapLink',
           headerStyle: { backgroundColor: 'black' },
@@ -37,4 +36,4 @@ function MainNavigator() {
   )
 }
 
-export default MainNavigator
+export default TopTabsNavigator
