@@ -7,14 +7,26 @@
 
 import React from 'react'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
-import { NavigationContainer } from '@react-navigation/native'
+import { DefaultTheme, NavigationContainer } from '@react-navigation/native'
 import MainNavigator from './navigation/MainNavigator'
 import BootSplash from 'react-native-bootsplash
 
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: '#1B1B1B'
+  }
+}
+
+function App() {
+  return (
+    <GestureHandlerRootView style={styles.container}>
       <NavigationContainer
         onReady={() => {
           BootSplash.hide({ fade: true })
         }}
+        theme={theme}
       >
         <MainNavigator />
       </NavigationContainer>
