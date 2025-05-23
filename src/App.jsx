@@ -9,7 +9,8 @@ import React from 'react'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native'
 import MainNavigator from './navigation/MainNavigator'
-import BootSplash from 'react-native-bootsplash
+import BootSplash from 'react-native-bootsplash'
+import { StyleSheet } from 'react-native'
 
 const theme = {
   ...DefaultTheme,
@@ -19,7 +20,7 @@ const theme = {
   }
 }
 
-function App() {
+function App () {
   return (
     <GestureHandlerRootView style={styles.container}>
       <NavigationContainer
@@ -33,5 +34,11 @@ function App() {
     </GestureHandlerRootView>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+})
 
 export default App
