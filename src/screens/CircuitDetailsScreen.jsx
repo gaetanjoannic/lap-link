@@ -12,8 +12,6 @@ function CircuitDetailsScreen({ route, navigation }) {
     }
   }, [id])
 
-  console.log('CircuitDetails', circuit)
-
   if (isLoading) {
     return (
       <View style={styles.loadingContainer}>
@@ -41,7 +39,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#f5f5f5'
+    backgroundColor: '#1B1B1B'
   },
   loadingContainer: {
     flex: 1,
@@ -52,16 +50,16 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
-    color: '#333'
+    color: '#f1f1f1'
   },
   location: {
     fontSize: 18,
-    color: '#555',
+    color: '#f1f1f1',
     marginBottom: 20
   },
   description: {
     fontSize: 16,
-    color: '#777',
+    color: '#f1f1f1',
     marginBottom: 20
   }
 })
