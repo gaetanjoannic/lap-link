@@ -1,22 +1,19 @@
-import { StyleSheet, View } from 'react-native'
+import { ImageBackground, StyleSheet, View } from 'react-native'
 import useCircuits from '../hooks/useCircuits'
 import CircuitsList from '../components/circuits/CircuitsList'
+import { customStyles } from '../assets/css/styles'
+
+const image = require('../assets/images/carbon-bg.jpg')
 
 function CircuitsScreen() {
   const { circuits } = useCircuits()
   return (
-    <View style={styles.container}>
+    <ImageBackground source={image} resizeMode='cover' style={customStyles.container}>
       <CircuitsList
         circuits={circuits}
       />
-    </View>
+    </ImageBackground>
   )
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: '#f5f5f5'
-  }
-})
+
 export default CircuitsScreen

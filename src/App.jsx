@@ -9,11 +9,8 @@ import React from 'react'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { NavigationContainer } from '@react-navigation/native'
 import MainNavigator from './navigation/MainNavigator'
-import BootSplash from 'react-native-bootsplash'
+import BootSplash from 'react-native-bootsplash
 
-function App () {
-  return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer
         onReady={() => {
           BootSplash.hide({ fade: true })

@@ -23,11 +23,11 @@ function CircuitsListItem({ circuit }) {
 const styles = StyleSheet.create({
   container: {
     padding: 15,
-    backgroundColor: '#fff',
+    backgroundColor: '#F1F1F1',
     borderRadius: 10,
     marginVertical: 5,
     marginHorizontal: 10,
-    shadowColor: '#000',
+    shadowColor: '#1B1B1B',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 5,
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#333'
-  },
+  }
 })
 
 export default CircuitsListItem
