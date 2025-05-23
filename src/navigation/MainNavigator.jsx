@@ -1,25 +1,40 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { TouchableOpacity, Text } from 'react-native'
+import { TouchableOpacity } from 'react-native'
 import BottomTabsNavigator from './BottomTabsNavigator'
 import ProfileScreen from '../screens/ProfileScreen'
+import Icon from '@react-native-vector-icons/material-design-icons'
+import { Image } from 'react-native-animatable'
 
 const Stack = createNativeStackNavigator()
 
-function MainNavigator() {
+function LogoTitle () {
+  return (
+    <Image
+      source={require('../../src/assets/images/top-logo.png')}
+      style={{
+        width: 100,
+        height: 80,
+        alignSelf: 'center'
+      }}
+      resizeMode='contain'
+    />
+  )
+}
+
+function MainNavigator () {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name='MainTabs'
+        name='Home'
         component={BottomTabsNavigator}
         options={({ navigation }) => ({
-          title: 'LapLink',
-          headerStyle: { backgroundColor: 'black' },
-          headerTintColor: '#fff',
-          headerTitleStyle: { fontWeight: 'bold' },
+          headerTitle: () => <LogoTitle navigation={navigation} />,
+          headerStyle: { backgroundColor: '#1b1b1b' },
+          headerTintColor: '#f1f1f1',
           headerRight: () => (
             <TouchableOpacity onPress={() => navigation.navigate('Profil')}>
-              <Text style={{ color: '#fff', marginRight: 15 }}>Profil</Text>
+              <Icon name='account-circle' size={20} color='#f1f1f1' />
             </TouchableOpacity>
           )
         })}
@@ -28,8 +43,7 @@ function MainNavigator() {
         name='Profil'
         component={ProfileScreen}
         options={{
-          title: 'Mon Profil',
-          headerStyle: { backgroundColor: 'black' },
+          headerStyle: { backgroundColor: '#j1b1b1b' },
           headerTintColor: '#fff'
         }}
       />
