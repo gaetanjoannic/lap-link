@@ -5,24 +5,24 @@
  * @format
  */
 
-import React from "react";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { NavigationContainer } from "@react-navigation/native";
-import MainNavigator from "./navigation/MainNavigator";
-import BootSplash from "react-native-bootsplash";
+import React from 'react'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import { NavigationContainer } from '@react-navigation/native'
+import MainNavigator from './navigation/MainNavigator'
+import BootSplash from 'react-native-bootsplash'
 
-function App() {
+function App () {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer
         onReady={() => {
-          BootSplash.hide({ fade: true });
+          BootSplash.hide({ fade: true })
         }}
       >
         <MainNavigator />
       </NavigationContainer>
     </GestureHandlerRootView>
-  );
+  )
 }
 
-export default App;
+export default App
