@@ -4,7 +4,7 @@ import HomeScreen from '../screens/HomeScreen'
 import CrewsNavigator from './CrewsNavigator'
 import EventsNavigator from './EventsNavigator'
 import GoNavigator from './GoNavigator'
-import { StyleSheet } from 'react-native'
+import { Image, StyleSheet } from 'react-native'
 import Icon from '@react-native-vector-icons/material-design-icons'
 
 const Tab = createBottomTabNavigator()
@@ -16,18 +16,18 @@ function BottomTabsNavigator () {
         headerShown: false,
         tabBarStyle: styles.tabBar,
         tabBarActiveTintColor: '#B71918',
-        tabBarInactiveTintColor: '#F1F1F1',
+        tabBarInactiveTintColor: '#666666',
         tabBarItemStyle: styles.menuElement,
         tabBarShowLabel: false,
-        tabBarIcon: styles.icon
+        tabBarIconStyle: styles.icons
       }}
     >
       <Tab.Screen
         name='Home'
         component={HomeScreen}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Icon name='favorite' color={color} size={size} />
+          tabBarIcon: ({ color }) => (
+            <Icon name='car' color={color} size={28} />
           )
         }}
       />
@@ -35,8 +35,8 @@ function BottomTabsNavigator () {
         name='Circuits'
         component={CircuitsNavigator}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Icon name='favorite' color={color} size={size} />
+          tabBarIcon: ({ color }) => (
+            <Icon name='go-kart-track' color={color} size={28} />
           )
         }}
       />
@@ -45,7 +45,10 @@ function BottomTabsNavigator () {
         component={GoNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Icon name='favorite' color={color} size={size} />
+            <Image
+              source={require('../assets/images/icons/go.png')}
+              style={styles.goImage}
+            />
           ),
           tabBarItemStyle: styles.goElement
         }}
@@ -54,8 +57,8 @@ function BottomTabsNavigator () {
         name='Crews'
         component={CrewsNavigator}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Icon name='favorite' color={color} size={size} />
+          tabBarIcon: ({ color }) => (
+            <Icon name='account-multiple' color={color} size={28} />
           )
         }}
       />
@@ -63,8 +66,8 @@ function BottomTabsNavigator () {
         name='Events'
         component={EventsNavigator}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Icon name='favorite' color={color} size={size} />
+          tabBarIcon: ({ color }) => (
+            <Icon name='calendar-month' color={color} size={28} />
           )
         }}
       />
@@ -74,31 +77,63 @@ function BottomTabsNavigator () {
 
 const styles = StyleSheet.create({
   tabBar: {
-    backgroundColor: '#1B1B1B',
-    borderTopWidth: 1
+    position: 'absolute',
+    backgroundColor: '#2A2A2A',
+    height: 90,
+    borderTopLeftRadius: 45,
+    borderTopRightRadius: 45,
+    paddingBottom: 35,
+    paddingTop: 15,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: -3
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 10
   },
   menuElement: {
-    backgroundColor: '#F1F1F1',
-    borderRadius: 100,
-    padding: 10,
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 30,
     margin: 5,
-    color: '#B71918',
-    elevation: 5
+    height: 60,
+    width: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.15,
+    shadowRadius: 3,
+    elevation: 3
   },
   goElement: {
+    flex: 1,
     backgroundColor: '#B71918',
-    color: '#F1F1F1',
-    borderRadius: 100,
-    borderColor: '#510B0B',
-    borderWidth: 3,
-    padding: 10,
+    borderRadius: 40,
     margin: 5,
-    elevation: 5
+    height: 80,
+    width: 80,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 8,
+    bottom: 15
   },
-  icon: {
-    backgroundColor: '#1B1B1B',
-    borderTopWidth: 1,
-    borderTopColor: '#F1F1F1'
+  goImage: {
+    width: 35,
+    height: 12,
+    tintColor: '#FFFFFF'
   }
 })
 
