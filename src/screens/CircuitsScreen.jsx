@@ -1,18 +1,18 @@
 import React, { useState, useMemo } from 'react'
 import { ImageBackground, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
 import Icon from '@react-native-vector-icons/material-design-icons'
-import useCircuits from '../hooks/useCircuits'
 import CircuitsList from '../components/circuits/CircuitsList'
 import { customStyles } from '../assets/css/styles'
 import data from '../datas.json'
 import { ScrollView } from 'react-native-gesture-handler'
+import SimpleCarousel from '../components/carousel/SimpleCarousel'
+import raceData from '../components/circuits/circuits-data.js'
 
 const image = require('../assets/images/carbon-bg.jpg')
 
 function CircuitsScreen() {
   const [searchQuery, setSearchQuery] = useState('')
 
-  // Filtrer les circuits selon la recherche
   const filteredCircuits = useMemo(() => {
     if (!searchQuery.trim()) {
       return data.circuits
@@ -21,13 +21,9 @@ function CircuitsScreen() {
     const query = searchQuery.toLowerCase().trim()
 
     return data.circuits.filter(circuit => {
-      // Recherche par nom
       const nameMatch = circuit.name.toLowerCase().includes(query)
-
-      // Recherche par localisation (location principale)
       const locationMatch = circuit.location.toLowerCase().includes(query)
 
-      // Recherche par ville dans les détails
       const cityMatch = circuit.details &&
         circuit.details['2'] &&
         circuit.details['2'].value.toLowerCase().includes(query)
@@ -80,6 +76,8 @@ function CircuitsScreen() {
         <CircuitsList circuits={filteredCircuits} />
 
         <Text style={customStyles.title}>Circuits précédemment visités</Text>
+
+        <SimpleCarousel data={raceData} />
       </ScrollView>
     </ImageBackground>
   )
@@ -114,7 +112,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 16,
     color: '#333',
-    paddingVertical: 0 // Enlever le padding par défaut sur Android
+    paddingVertical: 0
   },
   clearButton: {
     padding: 5,
