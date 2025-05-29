@@ -1,0 +1,217 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "example_user",
+      "email": "user@example.com",
+      "created_at": "2024-01-01T00:00:00Z"
+    }
+  ],
+  "circuits": [
+    {
+      "id": 1,
+      "name": "Circuit Paul Ricard",
+      "location": "Le Castellet, Var",
+      "description": "Circuit de F1 avec sa fameuse ligne droite du Mistral et ses bandes bleues et rouges",
+      "length_meters": 5842,
+      "created_at": "2024-01-01T00:00:00Z",
+      "details": {
+        "1": {
+          "type": "distance",
+          "value": 5.84
+        },
+        "2": {
+          "type": "location",
+          "value": "Le Castellet"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Circuit de Nevers Magny-Cours",
+      "location": "Magny-Cours, Nièvre",
+      "description": "Ancien circuit de F1 français connu pour son virage Adelaide",
+      "length_meters": 4411,
+      "created_at": "2024-01-01T00:00:00Z",
+      "details": {
+        "1": {
+          "type": "distance",
+          "value": 4.41
+        },
+        "2": {
+          "type": "location",
+          "value": "Magny-Cours"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Circuit Bugatti",
+      "location": "Le Mans, Sarthe",
+      "description": "Circuit permanent du Mans utilisé pour le MotoGP",
+      "length_meters": 4185,
+      "created_at": "2024-01-01T00:00:00Z",
+      "details": {
+        "1": {
+          "type": "distance",
+          "value": 4.19
+        },
+        "2": {
+          "type": "location",
+          "value": "Le Mans"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "name": "Circuit de Dijon-Prenois",
+      "location": "Prenois, Côte-d'Or",
+      "description": "Circuit historique avec des virages techniques et dénivelés",
+      "length_meters": 3800,
+      "created_at": "2024-01-01T00:00:00Z",
+      "details": {
+        "1": {
+          "type": "distance",
+          "value": 3.8
+        },
+        "2": {
+          "type": "location",
+          "value": "Prenois"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "name": "Circuit de Lédenon",
+      "location": "Lédenon, Gard",
+      "description": "Circuit technique avec le plus grand dénivelé de France",
+      "length_meters": 3156,
+      "created_at": "2024-01-01T00:00:00Z",
+      "details": {
+        "1": {
+          "type": "distance",
+          "value": 3.16
+        },
+        "2": {
+          "type": "location",
+          "value": "Lédenon"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "name": "Circuit Carole",
+      "location": "Tremblay-en-France, Seine-Saint-Denis",
+      "description": "Circuit principalement moto, plat et rapide",
+      "length_meters": 2055,
+      "created_at": "2024-01-01T00:00:00Z",
+      "details": {
+        "1": {
+          "type": "distance",
+          "value": 2.06
+        },
+        "2": {
+          "type": "location",
+          "value": "Tremblay-en-France"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "name": "Circuit du Val de Vienne",
+      "location": "Le Vigeant, Vienne",
+      "description": "Circuit varié avec courbes rapides et chicanes",
+      "length_meters": 3768,
+      "created_at": "2024-01-01T00:00:00Z",
+      "details": {
+        "1": {
+          "type": "distance",
+          "value": 3.77
+        },
+        "2": {
+          "type": "location",
+          "value": "Le Vigeant"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "name": "Circuit de Charade",
+      "location": "Saint-Genès-Champanelle, Puy-de-Dôme",
+      "description": "Circuit historique dans les volcans Auvergnats",
+      "length_meters": 3975,
+      "created_at": "2024-01-01T00:00:00Z",
+      "details": {
+        "1": {
+          "type": "distance",
+          "value": 3.98
+        },
+        "2": {
+          "type": "location",
+          "value": "Saint-Genès-Champanelle"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "name": "Circuit de Nogaro",
+      "location": "Nogaro, Gers",
+      "description": "Circuit Paul Armagnac connu pour ses courses de tourisme",
+      "length_meters": 3636,
+      "created_at": "2024-01-01T00:00:00Z",
+      "details": {
+        "1": {
+          "type": "distance",
+          "value": 3.64
+        },
+        "2": {
+          "type": "location",
+          "value": "Nogaro"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "name": "Circuit de Pau-Arnos",
+      "location": "Arnos, Pyrénées-Atlantiques",
+      "description": "Circuit technique avec dénivelés importants",
+      "length_meters": 3030,
+      "created_at": "2024-01-01T00:00:00Z",
+      "details": {
+        "1": {
+          "type": "distance",
+          "value": 3.03
+        },
+        "2": {
+          "type": "location",
+          "value": "Arnos"
+        }
+      }
+    }
+  ],
+  "circuit_points": [
+    {
+      "circuit_id": 1,
+      "points": [
+        {"id": 1, "lat": 43.252333, "lng": 5.791889, "order": 1, "is_start": true, "is_finish": false},
+        {"id": 2, "lat": 43.252583, "lng": 5.792889, "order": 2, "is_start": false, "is_finish": false},
+        {"id": 3, "lat": 43.253083, "lng": 5.793889, "order": 3, "is_start": false, "is_finish": false},
+        {"id": 4, "lat": 43.252583, "lng": 5.795889, "order": 4, "is_start": false, "is_finish": false},
+        {"id": 5, "lat": 43.253083, "lng": 5.796889, "order": 5, "is_start": false, "is_finish": false, "is_sector_end": true, "sector_number": 1},
+        {"id": 6, "lat": 43.252083, "lng": 5.797889, "order": 6, "is_start": false, "is_finish": false},
+        {"id": 7, "lat": 43.251083, "lng": 5.797889, "order": 7, "is_start": false, "is_finish": false},
+        {"id": 8, "lat": 43.250083, "lng": 5.798889, "order": 8, "is_start": false, "is_finish": false},
+        {"id": 9, "lat": 43.249583, "lng": 5.797889, "order": 9, "is_start": false, "is_finish": false},
+        {"id": 10, "lat": 43.249083, "lng": 5.796889, "order": 10, "is_start": false, "is_finish": false, "is_sector_end": true, "sector_number": 2},
+        {"id": 11, "lat": 43.249583, "lng": 5.794889, "order": 11, "is_start": false, "is_finish": false},
+        {"id": 12, "lat": 43.250083, "lng": 5.793889, "order": 12, "is_start": false, "is_finish": false},
+        {"id": 13, "lat": 43.250583, "lng": 5.792889, "order": 13, "is_start": false, "is_finish": false},
+        {"id": 14, "lat": 43.251583, "lng": 5.791889, "order": 14, "is_start": false, "is_finish": false},
+        {"id": 15, "lat": 43.252333, "lng": 5.791889, "order": 15, "is_start": false, "is_finish": true}
+      ]
+    }
+  ],
+  "driving_sessions": [],
+  "session_points": [],
+  "lap_times": []
+}
