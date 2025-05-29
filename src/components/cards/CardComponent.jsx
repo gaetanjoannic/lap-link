@@ -4,7 +4,6 @@ import CardDetailsElement from './CardDetailsElement'
 import LinearGradient from 'react-native-linear-gradient'
 
 function CardComponent({ element, type }) {
-  console.log({ element })
   const navigation = useNavigation()
   const handlePress = () => {
     navigation.navigate(`${type}Details`, {
@@ -35,7 +34,7 @@ function CardComponent({ element, type }) {
           <Text style={styles.name}>
             {element.name}
           </Text>
-          <CardDetailsElement element={element} />
+          <CardDetailsElement element={element.details} type={type} />
         </View>
 
       </LinearGradient>
