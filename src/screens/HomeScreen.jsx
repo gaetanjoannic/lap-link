@@ -1,8 +1,9 @@
 import React from 'react'
 import { FlatList, StyleSheet, ImageBackground } from 'react-native'
 import Card, { getCardsData } from '../components/cards/HomeCard.jsx'
-import FavoriteTrackCard from '../components/cards/FavoriteTrackCard.jsx'
 import { ScrollView } from 'react-native-gesture-handler'
+import SimpleCarousel from '../components/carousel/SimpleCarousel.jsx'
+import raceData from '../components/circuits/circuits-data.js'
 
 const HomeScreen = () => {
   const data = getCardsData()
@@ -14,7 +15,7 @@ const HomeScreen = () => {
       resizeMode='cover'
     >
       <ScrollView>
-        <FavoriteTrackCard />
+        <SimpleCarousel data={raceData} />
         <FlatList
           data={data}
           keyExtractor={(item) => item.id}
