@@ -1,74 +1,66 @@
 import React, { useState } from 'react'
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Animated
-} from 'react-native'
-import { Image } from 'react-native-animatable'
+import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
 
-const RaceCard = () => {
+const RaceCard = ({ title, trackImage, scores, myTime }) => {
   const [isExpanded, setIsExpanded] = useState(false)
-
-  // Animation pour dérouler (optionnelle)
-  const [height] = useState(new Animated.Value(0))
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded)
-
-    Animated.timing(height, {
-      toValue: isExpanded ? 0 : 85, // Ajuste la hauteur ici
-      duration: 400,
-      useNativeDriver: false
-    }).start()
   }
 
   return (
     <View style={styles.card}>
+      {/* Image */}
       <View style={styles.trackContainer}>
         <Image
-          source={require('../../assets/images/circuit-track/Track-FDB.png')}
+          source={trackImage}
+          style={styles.image}
           resizeMode='contain'
-          style={styles.trackImage}
         />
       </View>
+
+      {/* Title + toggle arrow */}
       <TouchableOpacity onPress={toggleExpand}>
         <View style={styles.headerContainer}>
-          <Text style={styles.title}>Fay de Bretagne</Text>
-          <Text style={styles.arrow}>{isExpanded ? '⌄' : '⌃'}</Text>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.arrow}>{isExpanded ? '⌃' : '⌄'}</Text>
         </View>
       </TouchableOpacity>
 
-      {/* Zone déroulante */}
-      <Animated.View style={[styles.scoresContainer, { height }]}>
-        <View style={styles.scoreRow}>
-          <Text style={styles.medal}>🥇 1:29:00 John Burger</Text>
+      {/* Scores */}
+      {isExpanded && (
+        <View style={styles.scoresContainer}>
+          {scores.map((score, index) => (
+            <View key={index} style={styles.scoreRow}>
+              <Text style={styles.medal}>
+                {score.place === 1 ? '🥇' : score.place === 2 ? '🥈' : '🥉'}
+              </Text>
+              <Text>
+                {score.time} {score.name}
+              </Text>
+            </View>
+          ))}
         </View>
-        <View style={styles.scoreRow}>
-          <Text style={styles.medal}>🥈 1:38:50 Johni Tortelini</Text>
-        </View>
-        <View style={styles.scoreRow}>
-          <Text style={styles.medal}>🥉 1:40:68 Johne Sanchez</Text>
-        </View>
-      </Animated.View>
+      )}
 
+      {/* My time */}
       <View style={styles.myTimeContainer}>
-        <Text style={styles.myTimeText}>1:56:68 Me</Text>
+        <Text style={styles.myTimeText}>{myTime} Me</Text>
       </View>
     </View>
   )
 }
+
 export default RaceCard
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: '#f1f1f1',
     borderRadius: 16,
     overflow: 'hidden',
     margin: 16,
     elevation: 5,
-    width: '55%'
+    width: '60%'
   },
   trackContainer: {
     height: 180,
@@ -80,7 +72,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 12,
-    paddingBottom: 0,
     alignItems: 'center',
     backgroundColor: '#f1f1f1'
   },
@@ -101,10 +92,10 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   myTimeText: {
-    color: '#fff',
+    color: '#f1f1f1',
     fontWeight: 'bold'
   },
-  trackImage: {
+  image: {
     width: '80%',
     height: 180
   }
