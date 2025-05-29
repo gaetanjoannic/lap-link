@@ -1,11 +1,11 @@
 import React from 'react'
 import { View, ScrollView, StyleSheet, Dimensions } from 'react-native'
-import RaceCard from '../cards/FavoriteTrackCard.jsx' // ton composant
+import RaceCard from '../cards/RaceCard.jsx'
 
 const { width: PAGE_WIDTH } = Dimensions.get('window')
 
-function SimpleCarousel ({ data }) {
-  const CARD_WIDTH = PAGE_WIDTH * 1 // largeur réduite pour l’effet peeking
+function SimpleCarousel({ data }) {
+  const CARD_WIDTH = PAGE_WIDTH * 1
   const CARD_MARGIN = -50
 
   return (
@@ -40,7 +40,7 @@ function SimpleCarousel ({ data }) {
 const styles = StyleSheet.create({
   scrollContainer: {
     alignItems: 'center',
-    paddingHorizontal: 0 // un petit padding si tu veux encore plus d’espace
+    paddingHorizontal: 0
   },
   cardWrapper: {
     justifyContent: 'center',
