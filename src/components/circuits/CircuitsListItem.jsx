@@ -1,22 +1,24 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import CardComponent from '../cards/CardComponent'
 import WeatherIcon from '../weather/WeatherIcon'
 
-function CircuitsListItem({ circuit }) {
-  const navigation = useNavigation()
-  const handlePress = () => {
-    navigation.navigate('CircuitDetails', {
-      id: circuit.id
-    })
-  }
+function CircuitsListItem ({ circuit }) {
+  // const navigation = useNavigation()
+  // const handlePress = () => {
+  //   navigation.navigate('CircuitDetails', {
+  //     id: circuit.id
+  //   })
+  // }
 
   return (
-    <TouchableOpacity onPress={handlePress} style={styles.container}>
-      <View style={styles.content}>
-        <Text style={styles.name}>{circuit.name}</Text>
-        <WeatherIcon lat={circuit.latitude} lon={circuit.longitude} />
-      </View>
-    </TouchableOpacity>
+    <CardComponent element={circuit} type='Circuit' />
+    // <TouchableOpacity onPress={handlePress} style={styles.container}>
+    //   <View style={styles.content}>
+    //     <Text style={styles.name}>{circuit.name}</Text>
+    //     <WeatherIcon lat={circuit.latitude} lon={circuit.longitude} />
+    //   </View>
+    // </TouchableOpacity>
   )
 }
 
