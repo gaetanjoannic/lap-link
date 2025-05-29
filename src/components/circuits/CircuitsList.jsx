@@ -14,6 +14,7 @@ function CircuitsList({ circuits }) {
           />
         )
       }
+      style={{ alignItems: 'center' }}
     />
   )
 }
