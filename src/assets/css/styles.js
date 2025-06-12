@@ -9,7 +9,7 @@ export const customStyles = StyleSheet.create({
     height: '100%'
   },
   title: {
-    fontSize: 32,
+    fontSize: 30,
     marginBottom: 20,
     marginTop: 40,
     marginHorizontal: 20,
@@ -23,12 +23,19 @@ export const customStyles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 30,
     color: '#f1f1f1',
-    fontFamily: 'ProximaNova-Regular'
+    fontFamily: 'ProximaNova-Light'
   },
   text: {
     fontSize: 16,
-    textAlign: 'center',
+    textAlign: 'left',
     marginBottom: 20,
+    color: '#f1f1f1',
+    fontFamily: 'ProximaNova-Regular'
+  },
+  description: {
+    fontSize: 16,
+    textAlign: 'left',
+    marginTop: 10,
     color: '#f1f1f1',
     fontFamily: 'ProximaNova-Regular'
   },
