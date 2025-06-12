@@ -2,6 +2,7 @@ import { ActivityIndicator, FlatList, StyleSheet, Text, View } from 'react-nativ
 import useWeather from '../../hooks/useWeather'
 import { useEffect } from 'react'
 import WeatherIcon from './WeatherIcon'
+import { customStyles } from '../../assets/css/styles'
 
 function WeatherForecastArray({ lat, lon }) {
   const { forecast, getForecastByCircuit, isLoading } = useWeather()
@@ -23,7 +24,7 @@ function WeatherForecastArray({ lat, lon }) {
   if (!forecast || forecast.length === 0) {
     return (
       <View style={styles.errorContainer}>
-        <Text>Aucune donnée météo disponible</Text>
+        <Text style={customStyles.text}>Aucune donnée météo disponible</Text>
       </View>
     )
   }
