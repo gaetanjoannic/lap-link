@@ -1,37 +1,44 @@
-import { ActivityIndicator, Button, StyleSheet, Text, View } from 'react-native'
-import useSingleCircuit from '../hooks/useSingleCircuit'
-import { useEffect } from 'react'
+import { Button, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import data from '../datas.json'
+import { customStyles } from '../assets/css/styles'
 import WeatherForecastArray from '../components/weather/WeatherForecastArray'
+import CardDetailed from '../components/cards/not-clickable-cards/CardDetailed'
 
-function CircuitDetailsScreen({ route, navigation }) {
+function CircuitDetailsScreen({ navigation, route }) {
+  const image = require('../assets/images/carbon-bg.jpg')
+
   const { id } = route.params
-  const { circuit, isLoading, getCircuitData } = useSingleCircuit()
-  useEffect(() => {
-    if (id) {
-      getCircuitData(id)
-    }
-  }, [id])
+  const circuit = data.circuits.find(c => c.id === id)
+  const gps = data.circuit_points.find(c => c.circuit_id === id)
 
-  if (isLoading) {
+  if (!circuit) {
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator size='large' />
+        <Text style={{ color: '#f1f1f1' }}>Circuit non trouvé</Text>
       </View>
     )
   }
 
   return (
-    <View style={styles.container}>
-      <Button title='Retour' onPress={() => navigation.goBack()} />
+    <ImageBackground source={image} resizeMode='cover' style={styles.container}>
+      <Button title='<-' onPress={() => navigation.goBack()} />
       {circuit && (
         <>
-          <Text style={styles.title}>{circuit?.data[0]?.name}</Text>
-          <Text style={styles.location}>{circuit.data[0].location}.</Text>
-          <Text style={styles.description}>{circuit.data[0].description || "Oups, nous n'avons pas encore d'informations pour ce circuit."}.</Text>
-          <WeatherForecastArray lat={circuit.data[0].latitude} lon={circuit.data[0].longitude} />
+          <Text style={customStyles.title}>{circuit?.name}</Text>
+          <CardDetailed element={circuit} type='circuit' />
+          {/* <WeatherForecastArray lat={gps?.points[0].lat} lon={gps?.points[0].lng} /> */}
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Go')}
+            style={{ borderRadius: 20, padding: 10, backgroundColor: '#B71918', textAlign: 'center' }}
+          >
+            <Text style={{ color: '#f1f1f1', fontSize: 16, textAlign: 'center' }}>
+              Lancer la course
+            </Text>
+          </TouchableOpacity>
+          <Text style={customStyles.title}>Podium actuel</Text>
         </>
       )}
-    </View>
+    </ImageBackground>
   )
 }
 
@@ -54,11 +61,6 @@ const styles = StyleSheet.create({
   },
   location: {
     fontSize: 18,
-    color: '#f1f1f1',
-    marginBottom: 20
-  },
-  description: {
-    fontSize: 16,
     color: '#f1f1f1',
     marginBottom: 20
   }
