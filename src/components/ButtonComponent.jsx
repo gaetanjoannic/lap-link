@@ -17,8 +17,7 @@ function ButtonComponent({ type, label, handlePress }) {
   return (
     <TouchableOpacity
       onPress={handlePress}
-      style={{ borderRadius: 20, padding: 10, textAlign: 'center' }}
-      backgroundColor={bgColor}
+      style={{ borderRadius: 20, padding: 10, textAlign: 'center', backgroundColor: bgColor, marginTop: 10 }}
     >
       <Text style={{ color: '#f1f1f1', fontSize: 16, textAlign: 'center' }}>
         {label}
