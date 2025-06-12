@@ -10,7 +10,7 @@ import raceData from '../components/circuits/circuits-data.js'
 
 const image = require('../assets/images/carbon-bg.jpg')
 
-function CircuitsScreen() {
+function CircuitsScreen () {
   const [searchQuery, setSearchQuery] = useState('')
 
   const filteredCircuits = useMemo(() => {
