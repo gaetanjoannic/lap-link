@@ -3,6 +3,7 @@ import data from '../datas.json'
 import { customStyles } from '../assets/css/styles'
 import WeatherForecastArray from '../components/weather/WeatherForecastArray'
 import CardDetailed from '../components/cards/not-clickable-cards/CardDetailed'
+import ButtonComponent from '../components/ButtonComponent'
 
 function CircuitDetailsScreen({ navigation, route }) {
   const image = require('../assets/images/carbon-bg.jpg')
@@ -25,16 +26,11 @@ function CircuitDetailsScreen({ navigation, route }) {
       {circuit && (
         <>
           <Text style={customStyles.title}>{circuit?.name}</Text>
-          <CardDetailed element={circuit} type='circuit' />
+          <CardDetailed element={circuit} type='Circuit' />
           {/* <WeatherForecastArray lat={gps?.points[0].lat} lon={gps?.points[0].lng} /> */}
-          <TouchableOpacity
-            onPress={() => navigation.navigate('Go')}
-            style={{ borderRadius: 20, padding: 10, backgroundColor: '#B71918', textAlign: 'center' }}
-          >
-            <Text style={{ color: '#f1f1f1', fontSize: 16, textAlign: 'center' }}>
-              Lancer la course
-            </Text>
-          </TouchableOpacity>
+          <ButtonComponent
+            type='Circuit' label='Lancer la course' handlePress={() => navigation.navigate('Go')}
+          />
           <Text style={customStyles.title}>Podium actuel</Text>
         </>
       )}
