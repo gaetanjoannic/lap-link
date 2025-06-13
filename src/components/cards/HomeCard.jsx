@@ -1,34 +1,42 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 const cardsData = [
   {
     id: '1',
     title: 'CIRCUITS',
+    route: 'Circuits',
     image: require('../../assets/images/cardImage/card1.jpg')
   },
   {
     id: '2',
     title: 'EVENNEMENTS',
+    route: 'Events',
     image: require('../../assets/images/cardImage/card2.jpg')
   },
   {
     id: '3',
     title: 'CREW',
+    route: 'Crews',
     image: require('../../assets/images/cardImage/card3.jpg')
   }
 ]
 
 export const getCardsData = () => cardsData
 
-const Card = ({ title, description, image, onPress }) => (
-  <TouchableOpacity style={styles.card} onPress={onPress}>
-    <Image source={image} style={styles.cardImage} />
-    <View style={styles.overlay}>
-      <Text style={styles.cardTitle}>{title}</Text>
-    </View>
-  </TouchableOpacity>
-)
+function Card ({ title, description, image, onPress, route }) {
+  const navigation = useNavigation()
+
+  return (
+    <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(route)}>
+      <Image source={image} style={styles.cardImage} />
+      <View style={styles.overlay}>
+        <Text style={styles.cardTitle}>{title}</Text>
+      </View>
+    </TouchableOpacity>
+  )
+}
 
 export default Card
 

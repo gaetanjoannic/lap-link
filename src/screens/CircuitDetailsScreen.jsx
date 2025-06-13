@@ -5,7 +5,7 @@ import WeatherForecastArray from '../components/weather/WeatherForecastArray'
 import CardDetailed from '../components/cards/not-clickable-cards/CardDetailed'
 import ButtonComponent from '../components/ButtonComponent'
 
-function CircuitDetailsScreen({ navigation, route }) {
+function CircuitDetailsScreen ({ navigation, route }) {
   const image = require('../assets/images/carbon-bg.jpg')
 
   const { id } = route.params
