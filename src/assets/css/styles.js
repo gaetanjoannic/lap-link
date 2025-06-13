@@ -2,11 +2,10 @@ import { StyleSheet } from 'react-native'
 
 export const customStyles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
-    alignItems: 'center',
     flex: 1,
-    width: '100%',
-    height: '100%'
+    padding: 20,
+    paddingBottom: 100,
+    backgroundColor: '#1B1B1B'
   },
   title: {
     fontSize: 30,

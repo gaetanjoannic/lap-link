@@ -4,6 +4,8 @@ import { customStyles } from '../assets/css/styles'
 import WeatherForecastArray from '../components/weather/WeatherForecastArray'
 import CardDetailed from '../components/cards/not-clickable-cards/CardDetailed'
 import ButtonComponent from '../components/ButtonComponent'
+import PodiumComponent from '../components/podium/PodiumComponent'
+import { ScrollView } from 'react-native-gesture-handler'
 
 function CircuitDetailsScreen({ navigation, route }) {
   const image = require('../assets/images/carbon-bg.jpg')
@@ -21,29 +23,27 @@ function CircuitDetailsScreen({ navigation, route }) {
   }
 
   return (
-    <ImageBackground source={image} resizeMode='cover' style={styles.container}>
-      <Button title='<-' onPress={() => navigation.goBack()} />
-      {circuit && (
-        <>
-          <Text style={customStyles.title}>{circuit?.name}</Text>
-          <CardDetailed element={circuit} type='Circuit' />
-          {/* <WeatherForecastArray lat={gps?.points[0].lat} lon={gps?.points[0].lng} /> */}
-          <ButtonComponent
-            type='Circuit' label='Lancer la course' handlePress={() => navigation.navigate('Go')}
-          />
-          <Text style={customStyles.title}>Podium actuel</Text>
-        </>
-      )}
-    </ImageBackground>
+    <ScrollView>
+      <ImageBackground source={image} resizeMode='cover' style={customStyles.container}>
+        <Button title='<-' onPress={() => navigation.goBack()} />
+        {circuit && (
+          <>
+            <Text style={customStyles.title}>{circuit?.name}</Text>
+            <CardDetailed element={circuit} type='Circuit' />
+            {/* <WeatherForecastArray lat={gps?.points[0].lat} lon={gps?.points[0].lng} /> */}
+            <ButtonComponent
+              type='Circuit' label='Lancer la course' handlePress={() => navigation.navigate('Go')}
+            />
+            <Text style={customStyles.title}>Podium actuel</Text>
+            <PodiumComponent />
+          </>
+        )}
+      </ImageBackground>
+    </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: '#1B1B1B'
-  },
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
