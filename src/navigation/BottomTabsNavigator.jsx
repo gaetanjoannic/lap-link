@@ -17,9 +17,7 @@ function BottomTabsNavigator () {
         tabBarStyle: styles.tabBar,
         tabBarActiveTintColor: '#B71918',
         tabBarInactiveTintColor: '#666666',
-        tabBarItemStyle: styles.menuElement,
-        tabBarShowLabel: false,
-        tabBarIconStyle: styles.icons
+        tabBarShowLabel: false
       }}
     >
       <Tab.Screen
@@ -27,8 +25,9 @@ function BottomTabsNavigator () {
         component={HomeScreen}
         options={{
           tabBarIcon: ({ color }) => (
-            <Icon name='car' color={color} size={28} />
-          )
+            <Icon name='car' color={color} size={28} style={styles.styleIcons} />
+          ),
+          tabBarItemStyle: styles.menuElement
         }}
       />
       <Tab.Screen
@@ -36,8 +35,9 @@ function BottomTabsNavigator () {
         component={CircuitsNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <Icon name='go-kart-track' color={color} size={28} />
-          )
+            <Icon name='go-kart-track' color={color} size={28} style={styles.styleIcons} />
+          ),
+          tabBarItemStyle: styles.menuElement
         }}
       />
       <Tab.Screen
@@ -58,8 +58,9 @@ function BottomTabsNavigator () {
         component={CrewsNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <Icon name='account-multiple' color={color} size={28} />
-          )
+            <Icon name='account-multiple' color={color} size={28} style={styles.styleIcons} />
+          ),
+          tabBarItemStyle: styles.menuElement
         }}
       />
       <Tab.Screen
@@ -67,8 +68,9 @@ function BottomTabsNavigator () {
         component={EventsNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <Icon name='calendar-month' color={color} size={28} />
-          )
+            <Icon name='calendar-month' color={color} size={28} style={styles.styleIcons} />
+          ),
+          tabBarItemStyle: styles.menuElement
         }}
       />
     </Tab.Navigator>
@@ -78,48 +80,33 @@ function BottomTabsNavigator () {
 const styles = StyleSheet.create({
   tabBar: {
     position: 'absolute',
-    backgroundColor: '#2A2A2A',
-    height: 90,
+    backgroundColor: '#1b1b1b',
+    height: 60,
     borderTopLeftRadius: 45,
     borderTopRightRadius: 45,
     paddingBottom: 35,
-    paddingTop: 15,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: -3
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
-    elevation: 10
+    borderColor: '#1b1b1b'
   },
   menuElement: {
-    flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#f1f1f1',
     borderRadius: 30,
     margin: 5,
     height: 60,
     width: 60,
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2
-    },
-    shadowOpacity: 0.15,
-    shadowRadius: 3,
-    elevation: 3
+    alignSelf: 'center'
   },
+
   goElement: {
     flex: 1,
     backgroundColor: '#B71918',
-    borderRadius: 40,
+    borderRadius: 50,
     margin: 5,
-    height: 80,
-    width: 80,
+    height: 63,
     justifyContent: 'center',
     alignItems: 'center',
+    alignSelf: 'center',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -128,13 +115,20 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 5,
     elevation: 8,
-    bottom: 15
+    bottom: 14
   },
   goImage: {
-    width: 35,
-    height: 12,
-    tintColor: '#FFFFFF'
+    width: 46,
+    height: 19,
+    tintColor: '#FFFFFF',
+    marginTop: 20
+  },
+  styleIcons: {
+    width: 28,
+    height: 28,
+    marginTop: 18
   }
+
 })
 
 export default BottomTabsNavigator

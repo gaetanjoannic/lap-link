@@ -63,6 +63,6 @@ const styles = StyleSheet.create({
     paddingBottom: 20
   },
   listEvent: {
-    paddingBottom: 100
+    paddingBottom: 80
   }
 })
