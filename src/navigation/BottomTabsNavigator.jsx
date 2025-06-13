@@ -9,7 +9,7 @@ import Icon from '@react-native-vector-icons/material-design-icons'
 
 const Tab = createBottomTabNavigator()
 
-function BottomTabsNavigator() {
+function BottomTabsNavigator () {
   return (
     <Tab.Navigator
       screenOptions={{

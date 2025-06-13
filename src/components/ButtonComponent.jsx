@@ -1,11 +1,14 @@
 import { Text, TouchableOpacity } from 'react-native'
 
-function ButtonComponent({ type, label, handlePress }) {
+function ButtonComponent ({ type, label, handlePress }) {
   let bgColor = '#F1F1F1'
 
   switch (type) {
     case 'Circuit':
       bgColor = '#B71918'
+      break
+    case 'Event':
+      bgColor = '#F7A715'
       break
     default:
       bgColor = '#F1F1F1'

@@ -26,6 +26,7 @@ const HomeScreen = () => {
               title={item.title}
               description={item.description}
               image={item.image}
+              route={item.route}
             />
           )}
           contentContainerStyle={styles.listContent}
@@ -44,7 +45,7 @@ const HomeScreen = () => {
               place={item.place}
               date={item.date}
             />
-          )} contentContainerStyle={styles.listContent}
+          )} contentContainerStyle={styles.listEvent}
         />
       </ScrollView>
     </ImageBackground>
@@ -60,5 +61,8 @@ const styles = StyleSheet.create({
   },
   listContent: {
     paddingBottom: 20
+  },
+  listEvent: {
+    paddingBottom: 100
   }
 })

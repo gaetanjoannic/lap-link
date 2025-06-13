@@ -1,5 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import ButtonComponent from '../ButtonComponent'
+import { useNavigation } from '@react-navigation/native'
 
 const EventData = [
   {
@@ -14,25 +16,32 @@ const EventData = [
     id: '2',
     title: 'RENCONTRE',
     image: require('../../assets/images/cardImage/card2.jpg'),
-    description: 'Organisé par Noa Deluxe ++ 2000 pro max 2026',
-    place: 'My digital Burgouz delouxe',
+    description: "Organisé par l'ACO",
+    place: 'Circuit Bugatti',
     date: '23/12/2025 - 10h00'
   }
 ]
 
 export const getEventCardsData = () => EventData
 
-const EventCard = ({ title, description, image, place, date, onPress }) => (
-  <TouchableOpacity style={styles.card} onPress={onPress}>
-    <Image source={image} style={styles.cardImage} />
-    <View style={styles.overlay}>
-      <Text style={styles.cardTitle}>{title}</Text>
-      <Text style={styles.cardDescription}>{description}</Text>
-      <Text style={styles.cardPlace}>{place}</Text>
-      <Text style={styles.cardDate}>{date}</Text>
+function EventCard ({ title, description, image, place, date, onPress }) {
+  const navigation = useNavigation()
+
+  return (
+    <View style={styles.card} onPress={onPress}>
+      <Image source={image} style={styles.cardImage} />
+      <View style={styles.overlay}>
+        <Text style={styles.cardTitle}>{title}</Text>
+        <Text style={styles.cardDescription}>{description}</Text>
+        <Text style={styles.cardPlace}>{place}</Text>
+        <Text style={styles.cardDate}>{date}</Text>
+        <TouchableOpacity>
+          <ButtonComponent type='Event' label="Voir l'évènement" handlePress={() => navigation.navigate('Events')} />
+        </TouchableOpacity>
+      </View>
     </View>
-  </TouchableOpacity>
-)
+  )
+}
 
 export default EventCard
 
@@ -88,6 +97,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#f1f1f1',
     paddingHorizontal: 10,
-    paddingTop: 2
+    paddingTop: 2,
+    paddingBottom: 10
   }
 })

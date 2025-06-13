@@ -7,7 +7,7 @@ import ButtonComponent from '../components/ButtonComponent'
 import PodiumComponent from '../components/podium/PodiumComponent'
 import { ScrollView } from 'react-native-gesture-handler'
 
-function CircuitDetailsScreen({ navigation, route }) {
+function CircuitDetailsScreen ({ navigation, route }) {
   const image = require('../assets/images/carbon-bg.jpg')
 
   const { id } = route.params
