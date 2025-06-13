@@ -26,6 +26,7 @@ const HomeScreen = () => {
               title={item.title}
               description={item.description}
               image={item.image}
+              route={item.route}
             />
           )}
           contentContainerStyle={styles.listContent}

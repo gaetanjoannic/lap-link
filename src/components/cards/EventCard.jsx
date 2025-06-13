@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import ButtonComponent from '../ButtonComponent'
+import { useNavigation } from '@react-navigation/native'
 
 const EventData = [
   {
@@ -23,20 +24,24 @@ const EventData = [
 
 export const getEventCardsData = () => EventData
 
-const EventCard = ({ title, description, image, place, date, onPress }) => (
-  <View style={styles.card} onPress={onPress}>
-    <Image source={image} style={styles.cardImage} />
-    <View style={styles.overlay}>
-      <Text style={styles.cardTitle}>{title}</Text>
-      <Text style={styles.cardDescription}>{description}</Text>
-      <Text style={styles.cardPlace}>{place}</Text>
-      <Text style={styles.cardDate}>{date}</Text>
-      <TouchableOpacity>
-        <ButtonComponent type='Event' label="Voir l'évènement" />
-      </TouchableOpacity>
+function EventCard ({ title, description, image, place, date, onPress }) {
+  const navigation = useNavigation()
+
+  return (
+    <View style={styles.card} onPress={onPress}>
+      <Image source={image} style={styles.cardImage} />
+      <View style={styles.overlay}>
+        <Text style={styles.cardTitle}>{title}</Text>
+        <Text style={styles.cardDescription}>{description}</Text>
+        <Text style={styles.cardPlace}>{place}</Text>
+        <Text style={styles.cardDate}>{date}</Text>
+        <TouchableOpacity>
+          <ButtonComponent type='Event' label="Voir l'évènement" handlePress={() => navigation.navigate('Events')} />
+        </TouchableOpacity>
+      </View>
     </View>
-  </View>
-)
+  )
+}
 
 export default EventCard
 
