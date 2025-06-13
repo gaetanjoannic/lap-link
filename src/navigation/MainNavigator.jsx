@@ -30,8 +30,11 @@ function MainNavigator () {
         component={BottomTabsNavigator}
         options={({ navigation }) => ({
           headerTitle: () => <LogoTitle navigation={navigation} />,
-          headerStyle: { backgroundColor: '#1b1b1b' },
+          headerStyle: {
+            backgroundColor: '#1b1b1b'
+          },
           headerTintColor: '#f1f1f1',
+
           headerRight: () => (
             <TouchableOpacity onPress={() => navigation.navigate('Profil')}>
               <Icon name='account-circle' size={20} color='#f1f1f1' />
@@ -43,7 +46,7 @@ function MainNavigator () {
         name='Profil'
         component={ProfileScreen}
         options={{
-          headerStyle: { backgroundColor: '#j1b1b1b' },
+          headerStyle: { backgroundColor: '#1b1b1b' },
           headerTintColor: '#fff'
         }}
       />

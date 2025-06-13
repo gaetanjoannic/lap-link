@@ -1,9 +1,10 @@
-import CrewScreen from '../screens/CrewScreen'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import CrewScreen from '../screens/CrewScreen'
+import CrewDetailsScreen from '../screens/CrewDetailsScreen'
 
 const Stack = createNativeStackNavigator()
 
-function CrewsNavigator() {
+function CrewsNavigator () {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -11,6 +12,7 @@ function CrewsNavigator() {
       }}
     >
       <Stack.Screen name='Crew' component={CrewScreen} />
+      <Stack.Screen name='CrewDetails' component={CrewDetailsScreen} />
     </Stack.Navigator>
   )
 }

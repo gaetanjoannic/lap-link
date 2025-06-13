@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 const Stack = createNativeStackNavigator()
 
-function CircuitsNavigator() {
+function CircuitsNavigator () {
   return (
     <Stack.Navigator
       screenOptions={{

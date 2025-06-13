@@ -3,13 +3,15 @@ import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import CardDetailsElement from './CardDetailsElement'
 import LinearGradient from 'react-native-linear-gradient'
 
-function CardComponent({ element, type }) {
+function CardComponent ({ element, type }) {
   const navigation = useNavigation()
   const handlePress = () => {
     navigation.navigate(`${type}Details`, {
       id: element.id
     })
   }
+
+  console.log(element)
 
   return (
     <TouchableOpacity onPress={handlePress} style={styles.wrapper}>
