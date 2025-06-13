@@ -1,7 +1,7 @@
 import Icon from '@react-native-vector-icons/material-design-icons'
 import { View, Text } from 'react-native'
 
-function CardDetailsItem({ element, type }) {
+function CardDetailsItem ({ element, type }) {
   let nameIcon = 'help'
   let displayValue = element.value
   let iconColor = '#F1F1F1'
@@ -23,6 +23,9 @@ function CardDetailsItem({ element, type }) {
   switch (type) {
     case 'Circuit':
       iconColor = '#B71918'
+      break
+    case 'Crew':
+      iconColor = '#F7A715'
       break
     default:
       iconColor = '#F1F1F1'

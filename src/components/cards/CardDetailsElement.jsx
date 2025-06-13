@@ -1,7 +1,7 @@
 import { FlatList } from 'react-native-gesture-handler'
 import CardDetailsItem from './CardDetailsItem'
 
-function CardDetailsElement({ element, type }) {
+function CardDetailsElement ({ element, type }) {
   const dataArray = Object.values(element || {})
 
   return (

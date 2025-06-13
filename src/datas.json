@@ -189,6 +189,114 @@
       }
     }
   ],
+   "crews": [
+    {
+      "id": 1,
+      "name": "Les Pilotes du Dimanche",
+      "description": "Crew de passionnés de F1 qui se retrouvent chaque dimanche pour regarder les courses ensemble",
+      "participant_count": 12,
+      "created_at": "2024-02-15T10:30:00Z",
+      "srcImage": "../../assets/images/cardImage/card1.jpg",
+      "creator": {
+        "id": 101,
+        "name": "Jean Dupont"
+      },
+      "details": {
+        "1": {
+          "type": "category",
+          "value": "F1 Viewing"
+        },
+        "2": {
+          "type": "meeting_day",
+          "value": "Dimanche"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Speed Racers Monaco",
+      "description": "Groupe d'amateurs de courses automobiles basé à Monaco, organise des sorties sur circuits",
+      "participant_count": 8,
+      "created_at": "2024-01-20T14:45:00Z",
+      "creator": {
+        "id": 205,
+        "name": "Marie Leclerc"
+      },
+      "details": {
+        "1": {
+          "type": "location",
+          "value": "Monaco"
+        },
+        "2": {
+          "type": "activity",
+          "value": "Track Days"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Karting Warriors",
+      "description": "Équipe de karting compétitive qui participe aux championnats régionaux",
+      "participant_count": 15,
+      "created_at": "2024-03-05T16:20:00Z",
+      "creator": {
+        "id": 342,
+        "name": "Pierre Gasly Fan"
+      },
+      "details": {
+        "1": {
+          "type": "sport",
+          "value": "Karting"
+        },
+        "2": {
+          "type": "level",
+          "value": "Compétition"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "name": "Circuit Enthusiasts",
+      "description": "Communauté dédiée à la découverte et l'exploration des circuits automobiles français",
+      "participant_count": 23,
+      "created_at": "2024-01-10T09:15:00Z",
+      "creator": {
+        "id": 156,
+        "name": "Sophie Martin"
+      },
+      "details": {
+        "1": {
+          "type": "focus",
+          "value": "Circuits français"
+        },
+        "2": {
+          "type": "activity_type",
+          "value": "Exploration"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "name": "Virtual Racing League",
+      "description": "Ligue de course virtuelle sur simulateurs, championnats hebdomadaires F1 et GT",
+      "participant_count": 35,
+      "created_at": "2024-02-28T20:00:00Z",
+      "creator": {
+        "id": 287,
+        "name": "Alex Verstappen"
+      },
+      "details": {
+        "1": {
+          "type": "platform",
+          "value": "Simulateur"
+        },
+        "2": {
+          "type": "frequency",
+          "value": "Hebdomadaire"
+        }
+      }
+    }
+  ],
   "circuit_points": [
     {
       "circuit_id": 1,
