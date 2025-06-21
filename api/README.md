@@ -2,7 +2,7 @@
 
 ## Circuits
 
-| Ressource | URL | Méthode HTTP | Paramètres et variations | Commentaires |
+| Ressource | URL | Méthodes HTTP | Paramètres et variations | Commentaires |
 |-----------|-----|--------------|-------------------------|--------------|
 | Liste des circuits | `/circuits` | GET | `?search={query}` - Recherche par nom/location<br>`?limit={n}&offset={n}` - Pagination | Retourne circuits avec position de départ |
 | Détails d'un circuit | `/circuits/{id}` | GET | `id` - ID du circuit | Retourne circuit avec coordonnées GPS |
@@ -11,12 +11,11 @@
 
 ## Utilisateurs
 
-| Ressource | URL | Méthode HTTP | Paramètres et variations | Commentaires |
+| Ressource | URL | Méthodes HTTP | Paramètres et variations | Commentaires |
 |-----------|-----|--------------|-------------------------|--------------|
 | Inscription | `/users/register` | POST | Body: `{email, username, password}` | Création de compte |
 | Connexion | `/users/login` | POST | Body: `{email, password}` | Authentification |
-| Profil utilisateur | `/users/{id}` | GET | `id` - ID utilisateur | Informations du profil |
-| Modifier profil | `/users/{id}` | PUT | `id` - ID utilisateur<br>Body: données modifiées | Mise à jour profil |
+| Profil utilisateur | `/users/{id}` | GET, PUT | `id` - ID utilisateur<br>Body: données modifiées | Informations et mise à jour du profil |
 | Véhicules utilisateur | `/users/{id}/vehicles` | GET | `id` - ID utilisateur | Liste des voitures de l'utilisateur |
 | Ajouter véhicule | `/users/{id}/vehicles` | POST | `id` - ID utilisateur<br>Body: `{make, model, year, ...}` | Remplace l'API NHTSA actuelle |
 
