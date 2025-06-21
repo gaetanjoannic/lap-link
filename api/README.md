@@ -15,9 +15,9 @@
 |-----------|-----|--------------|-------------------------|--------------|
 | Inscription | `/users/register` | POST | Body: `{email, username, password}` | Création de compte |
 | Connexion | `/users/login` | POST | Body: `{email, password}` | Authentification |
-| Profil utilisateur | `/users/{id}` | GET, PUT | `id` - ID utilisateur<br>Body: données modifiées | Informations et mise à jour du profil |
-| Véhicules utilisateur | `/users/{id}/vehicles` | GET | `id` - ID utilisateur | Liste des voitures de l'utilisateur |
-| Ajouter véhicule | `/users/{id}/vehicles` | POST | `id` - ID utilisateur<br>Body: `{make, model, year, ...}` | Remplace l'API NHTSA actuelle |
+| Profil utilisateur | `/users/{id}` | GET, PUT | `id` - ID utilisateur<br>Body: données modifiées | Informations et mise à jour du profil<br>Ressource protégée |
+| Véhicules utilisateur | `/users/{id}/vehicles` | GET | `id` - ID utilisateur | Liste des voitures de l'utilisateur<br>Ressource protégée |
+| Ajouter véhicule | `/users/{id}/vehicles` | POST | `id` - ID utilisateur<br>Body: `{make, model, year, ...}` | Permet d'ajouter un véhicule<br>Ressource protégée |
 
 ## Sessions de pilotage
 
